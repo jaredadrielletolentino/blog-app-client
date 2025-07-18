@@ -1,0 +1,298 @@
+/* --- Color Palette & Typography --- */
+:root {
+  --bg-primary: #121212;      /* Very dark grey */
+  --bg-secondary: #1E1E1E;   /* Dark grey for cards and modals */
+  --bg-tertiary: #2a2a2a;    /* Slightly lighter grey for hover effects */
+  
+  --primary-accent: #8A2BE2; /* A vibrant BlueViolet for buttons and links */
+  --primary-accent-hover: #9932CC; /* MediumOrchid for hover */
+
+  --text-primary: #EAEAEA;   /* Light grey for primary text */
+  --text-secondary: #A0A0A0; /* Muted grey for subtitles and meta info */
+  
+  --border-color: #333333;   /* Subtle border color */
+  --danger-color: #e53e3e;     /* A modern red for delete actions */
+  --warning-color: #dd6b20;    /* A modern orange for edit actions */
+  
+  --info-color: #00BFFF;       /* DeepSkyBlue for view actions */
+
+
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* --- Global & Body Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Layout & Reusable Classes --- */
+.app-content {
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.page-title {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--primary-accent);
+  padding-left: 1rem;
+}
+
+/* --- Navbar Styling --- */
+.custom-navbar {
+  background: rgba(18, 18, 18, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand-custom {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  transition: color 0.3s ease;
+}
+.navbar-brand-custom:hover {
+  color: var(--primary-accent) !important;
+}
+
+.nav-link-custom {
+  color: var(--text-secondary) !important;
+  font-weight: 400;
+  margin: 0 12px;
+  padding-bottom: 5px !important;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+.nav-link-custom:hover {
+  color: var(--text-primary) !important;
+}
+.nav-link-custom.active {
+  color: var(--primary-accent) !important;
+  border-bottom-color: var(--primary-accent);
+}
+
+/* --- Enhanced Button Styles --- */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--primary-accent) !important;
+  color: #fff !important;
+}
+.btn-primary:hover {
+  background-color: var(--primary-accent-hover) !important;
+}
+
+.btn-danger {
+  background-color: var(--danger-color) !important;
+}
+.btn-warning {
+  background-color: var(--warning-color) !important;
+}
+
+.btn-info {
+    background-color: var(--info-color) !important;
+    color: #fff !important;
+}
+
+
+/* --- Professional Form & Auth Styling --- */
+.auth-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.auth-title {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-label {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.auth-input, .form-control {
+  background-color: var(--bg-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  transition: all 0.3s ease;
+}
+.auth-input:focus, .form-control:focus {
+  border-color: var(--primary-accent) !important;
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.15) !important;
+}
+
+.auth-toggle-link {
+  color: var(--primary-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.auth-toggle-link:hover {
+  color: var(--primary-accent-hover);
+  text-decoration: underline;
+}
+
+/* --- Post Card & Details --- */
+.post-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-accent);
+}
+
+.card-title {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.card-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.card-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Admin Dashboard & Modal Styling --- */
+.admin-table {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.admin-table thead {
+  background-color: var(--bg-tertiary);
+}
+.admin-table th, .admin-table td {
+  border-color: var(--border-color) !important;
+  vertical-align: middle;
+  padding: 1rem;
+}
+.admin-table tbody tr {
+  transition: background-color 0.2s ease;
+  background-color: var(--bg-secondary);
+}
+.admin-table tbody tr:hover {
+  background-color: var(--bg-tertiary);
+}
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.modal-content {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+.modal-header, .modal-footer {
+  border-color: var(--border-color);
+}
+
+/* --- Hero Section for Home Page --- */
+.hero-section {
+  background: linear-gradient(rgba(18, 18, 18, 0.8), var(--bg-primary)), url('https://images.unsplash.com/photo-1489533119213-66a5cd877091?q=80&w=2071&auto=format&fit=crop'  ) no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+  border-radius: 12px;
+  margin: 0 1rem;
+}
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.hero-subtitle {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  color: var(--text-secondary);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+.spinner-border {
+  color: var(--primary-accent) !important;
+}
+
+/* Style for the hamburger icon (the three lines) */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"  ) !important;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    margin-top: 1rem;
+  }
+
+  .navbar-nav .nav-link-custom {
+    padding: 0.75rem 0.5rem !important;
+    border-bottom: none !important;
+  }
+
+  .navbar-nav .nav-link-custom.active {
+    background-color: var(--primary-accent);
+    color: #fff !important;
+    border-radius: 6px;
+  }
+
+  .navbar-nav .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-text {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
