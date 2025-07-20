@@ -49,7 +49,7 @@ export default function Login() {
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label">Email or Username</Form.Label>
+                  <Form.Label className="form-label">Email</Form.Label>
                   <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} required className="auth-input" />
                 </Form.Group>
                 <Form.Group className="mb-3">
